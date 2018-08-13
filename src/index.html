@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularMovies</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="js/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+  <app-root></app-root>
+  <center><img width="300" alt="Angular-Movies Logo" src="src/assets/images/image1.jpg"></center>
+  <br />
+
+  <!-- <h1>Movie Search</h1>
+   <input type="text" id="searchInput" placeholder="Search for movies...">
+    <button id="searchBtn">Search</button>  
+    <div id="movieArea"></div> -->
+
+
+
+<center>
+<h1>Movie Search</h1>
+		<input type="text" id="searchInput" placeholder="Search for movies...">
+		<button id="searchBtn">Search</button>	
+		<div id="movieArea"></div>
+
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("mySearch").placeholder;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+<h1>Movie Suggestions</h1>
+ 
+
+  <div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 10</div>
+    <img src="src/assets/images/movie1.jpg" style="width:20%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 10</div>
+    <img src="src/assets/images/movie2.jpg" style="width:20%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 10</div>
+    <img src="src/assets/images/movie3.jpg" style="width:20%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 10</div>
+    <img src="src/assets/images/movie4.jpg" style="width:20%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 10</div>
+    <img src="src/assets/images/movie5.jpg" style="width:20%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 10</div>
+    <img src="src/assets/images/movie6.jpg" style="width:20%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">7 / 10</div>
+    <img src="src/assets/images/movie7.jpg" style="width:20%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">8 / 10</div>
+    <img src="src/assets/images/movie8.jpg" style="width:20%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">9 / 10</div>
+    <img src="src/assets/images/movie9.jpg" style="width:20%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">10 / 10</div>
+    <img src="src/assets/images/movie10.jpg" style="width:20%">
+  </div>
+
+  
+
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie1.jpg" style="width:20%" onclick="currentSlide(1)" alt="Venom">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie2.jpg" style="width:20%" onclick="currentSlide(2)" alt="Beauty and the Beast">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie3.jpg" style="width:20%" onclick="currentSlide(3)" alt="Wonder Woman">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie4.jpg" style="width:20%" onclick="currentSlide(4)" alt="Black Panther">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie5.jpg" style="width:20%" onclick="currentSlide(5)" alt="Malificient">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie6.jpg" style="width:20%" onclick="currentSlide(6)" alt="Guardians of the Galaxy Vol.2">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie7.jpg" style="width:20%" onclick="currentSlide(7)" alt="The Shallows">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie8.jpg" style="width:20%" onclick="currentSlide(8)" alt="Brides Maids">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie9.jpg" style="width:20%" onclick="currentSlide(9)" alt="The Martian">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="src/assets/images/movie10.jpg" style="width:20%" onclick="currentSlide(20)" alt="Baby Driver">
+    </div>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+
+<embed name="Silence" src="sound.mp3" loop="false" hidden="true" autostart="true">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
